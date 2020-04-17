@@ -4,14 +4,12 @@ import com.mariiapasichna.models.Group;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-
 
 public class GroupDao {
     private SessionFactory sessionFactory;
 
     public GroupDao() {
-        sessionFactory = new Configuration().configure().buildSessionFactory();
+        sessionFactory = Configurations.getConfigurations();
     }
 
     public void clear() {

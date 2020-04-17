@@ -5,7 +5,6 @@ import com.mariiapasichna.models.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class StudentDao {
     private SessionFactory sessionFactory;
 
     public StudentDao() {
-        sessionFactory = new Configuration().configure().buildSessionFactory();
+        sessionFactory = Configurations.getConfigurations();
     }
 
     public void clear() {
